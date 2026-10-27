@@ -8,7 +8,9 @@ const totalCount = document.getElementById("total-count");
 const activeCount = document.getElementById("active-count");
 const doneCount = document.getElementById("done-count");
 
-let tasks = [];
+let tasks = JSON.parse(
+    localStorage.getItem("taskflow-tasks") || "[]"
+);
 let currentFilter = "all";
 
 document.getElementById("today").textContent =
@@ -24,6 +26,8 @@ function updateSummary() {
         tasks.filter(task => !task.completed).length;
     doneCount.textContent =
         tasks.filter(task => task.completed).length;
+
+    localStorage.setItem("taskflow-tasks", JSON.stringify(tasks));
 }
 
 function renderTasks() {
