@@ -1,0 +1,14 @@
+
+# File log
+*.log
+
+# File cấu hình riêng
+.env
+
+# File hệ thống
+.DS_Store
+Thumbs.db
+
+# Thư mục phụ thuộc nếu sau này dùng Node.js
+node_modules/
+    
