@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Quản lý công việc</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div>
+                <p class="eyebrow">MY WORKSPACE</p>
+                <h1>TaskFlow</h1>
+                <p class="subtitle">Từng bước nhỏ, hoàn thành mục tiêu lớn.</p>
+            </div>
+            <div class="date-badge" id="today"></div>
+        </header>
+
+        <section class="summary">
+            <div class="summary-card">
+                <span>Tổng công việc</span>
+                <strong id="total-count">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Đang thực hiện</span>
+                <strong id="active-count">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Đã hoàn thành</span>
+                <strong id="done-count">0</strong>
+            </div>
+        </section>
+
+        <section class="task-panel">
+            <h2>Danh sách công việc</h2>
+
+            <form id="task-form" class="task-form">
+                <input
+                    id="task-input"
+                    type="text"
+                    placeholder="Bạn cần hoàn thành việc gì?"
+                    maxlength="100"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit">+ Thêm việc</button>
+            </form>
+
+            <div class="filters">
+                <button class="filter active" data-filter="all">Tất cả</button>
+                <button class="filter" data-filter="active">Đang làm</button>
+                <button class="filter" data-filter="done">Hoàn thành</button>
+            </div>
+
+            <ul id="task-list" class="task-list"></ul>
+            <p id="empty-message" class="empty-message">
+                Chưa có công việc nào. Thêm việc đầu tiên nhé!
+            </p>
+        </section>
+    </main>
+</body>
+</html>
